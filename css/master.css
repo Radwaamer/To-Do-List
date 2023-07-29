@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to right, rgb(230, 100, 101), rgb(145, 152, 229));
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.todo,.list{
+    width: 500px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.todo{
+    padding: 15px;
+    box-shadow: #333 10px 10px 20px -3px;
+}
+.todo h3{
+    margin: 0 0 10px;
+}
+.todo form{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.todo form .text{
+    width: 100%;
+    font-size: 17px;
+    padding: 4px 7px;
+    outline: none;
+    color: rgb(230, 100, 101);
+    caret-color: rgb(145, 152, 229);
+    border: none;
+    border-bottom: 1px solid rgb(230, 100, 101);
+    border-left: 1px solid rgba(230, 100, 100, 0.405);
+}
+.todo form .submit{
+    background-color: rgb(230, 100, 101);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 13px;
+    border-radius: 20px;
+}
+
+.list{
+    border-radius: 5px;
+    margin-top: 60px;
+    box-shadow: #333 0px 0px 20px 0px;
+}
+.list .item{
+    border-bottom: 1px solid #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+.list .item:first-child{
+    border-top: 1px solid #777;
+}
+.list .item::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #eee;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    border-radius: 5px;
+    z-index: 1;
+}
+.list .item:hover::before{
+    width: 100%;
+}
+.list .item form{
+    font-size: 20px;
+    width: 100%;
+    z-index: 2;
+    padding: 15px;
+}
+.list .item form label{
+    margin-left: 3px;
+}
+.list .item .icons{
+    display: flex;
+    gap: 15px;
+    z-index: 2;
+}
+.list .item .icons div{
+    cursor: pointer;
+    font-size: 17px;
+    color: rgb(230, 100, 101);
+}
+.list .item .icons div:hover{
+    color: rgb(145, 152, 229);
+}
+
+.list .item.done{
+    opacity: 0.5;
+}
